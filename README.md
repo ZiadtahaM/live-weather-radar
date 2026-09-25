@@ -1,25 +1,38 @@
-# git-github.com-ZiadtahaM-weather
+# Live Weather Radar & Meteorological Forecast
 
-HTML
+Interactive frontend weather application delivering real-time atmospheric telemetry, multi-day forecasting, geographic search, and weather state animations.
 
-## Repository status
+```mermaid
+graph TD
+    User[Client Browser] --> UI[Weather Dashboard UI]
+    UI --> Search[Geographic City Search Bar]
+    Search --> API[OpenWeatherMap / Weather Telemetry API]
+    API --> Transform[Data Normalizer & Icon Mapper]
+    Transform --> UI
+    UI --> Forecast[Multi-Day Forecast Carousel]
+    UI --> Metric[Humidity / Wind / Pressure Grid]
+```
 
-This repository is part of Ziad Taha's public portfolio. It may represent a product study, an academic deliverable, or a practical engineering exercise. The current source, commit history, and dependency manifests are the source of truth for implementation status.
+## Overview
 
-| Detail | Value |
-|---|---|
-| Primary language | https://github.com/ZiadtahaM/git-github.com-ZiadtahaM-weather |
-| Repository |  |
-| Documentation status | Initial project map added during portfolio quality pass |
+Live Weather Radar provides real-time meteorological tracking for global locations. The application fetches current atmospheric conditions, temperature trends, precipitation probability, and wind metrics, presenting them in a responsive, data-dense layout.
 
-## Local development
+### Capabilities
 
-Inspect the root directory for the project manifest and follow its declared scripts before attempting a build or deployment. Where no manifest is included, preview the source with the smallest appropriate local tool and avoid inferring an unsupported server, database, authentication, payment, or AI integration.
+- **Real-Time Weather Metrics**: Current temperature, "feels like" metrics, relative humidity, atmospheric pressure, and wind speed.
+- **Dynamic Condition Visuals**: Weather-reactive iconography and backgrounds reflecting clear, rainy, stormy, or snowy conditions.
+- **Geographic Search**: Location search with input debouncing and fast query resolution.
+- **Multi-Day Outlook**: Predictive daily forecasts with temperature highs and lows.
 
-## Engineering and security notes
+## Technology Stack
 
-Never commit credentials, user data, runtime configuration, or production tokens. Treat external input as untrusted, validate it at the applicable boundary, and add automated build/test checks before using the repository as a deployment source. For feature work, document the user journey, loading/error/empty states, and a rollback path.
+- **Frontend**: Semantic HTML5, CSS3 with responsive glassmorphism
+- **Logic**: Vanilla ES6+ JavaScript, Fetch API, asynchronous promise handling
 
-## Portfolio context
+## Getting Started
 
-This project sits within a wider portfolio of React/TypeScript interfaces, Node.js/NestJS services, Arabic/English product experiments, and 3D web work. See the [profile repository](https://github.com/ZiadtahaM) for a curated entry point.
+Open `index.html` in your browser or run:
+
+```bash
+npx serve .
+```
